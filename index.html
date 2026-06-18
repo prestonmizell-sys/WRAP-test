@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta
+      name="description"
+      content="A responsive Fox News-style editorial landing page with related stories and videos."
+    >
+    <title>ICE Hotel Dispute News Landing Page</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:wght@700&family=Source+Sans+3:wght@400;600;700;800&display=swap"
+      rel="stylesheet"
+    >
+    <link rel="stylesheet" href="styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container header-inner">
+        <a class="brand" href="/" aria-label="News landing page home">
+          <span class="brand-mark">FN</span>
+          <span class="brand-text">News Desk</span>
+        </a>
+        <nav class="top-nav" aria-label="Section navigation">
+          <a href="#top-stories">Top Stories</a>
+          <a href="#videos">Videos</a>
+        </nav>
+      </div>
+    </header>
+
+    <main class="container page-shell">
+      <section class="hero" aria-labelledby="page-title">
+        <p class="eyebrow">Politics &amp; Public Safety</p>
+        <h1 id="page-title">Minnesota hotel dispute draws federal scrutiny and protests</h1>
+        <p class="dek">
+          Follow the latest developments from Fox News and Fox Business coverage,
+          including related reporting, live updates, and video analysis.
+        </p>
+      </section>
+
+      <div class="content-grid">
+        <section class="main-column" id="top-stories" aria-labelledby="stories-heading">
+          <div class="section-heading">
+            <p class="kicker">Developing Story</p>
+            <h2 id="stories-heading">Latest stories</h2>
+          </div>
+          <div class="story-list" id="story-list" aria-live="polite"></div>
+        </section>
+
+        <aside class="video-column" id="videos" aria-labelledby="videos-heading">
+          <div class="rail-card">
+            <div class="section-heading rail-heading">
+              <p class="kicker">Watch</p>
+              <h2 id="videos-heading">Videos</h2>
+            </div>
+            <div class="video-list" id="video-list" aria-live="polite"></div>
+          </div>
+        </aside>
+      </div>
+    </main>
+
+    <script src="script.js" defer></script>
+  </body>
+</html>
