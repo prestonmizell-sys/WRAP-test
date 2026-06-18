@@ -157,7 +157,7 @@ function renderStories() {
 
     const source = document.createElement("p");
     source.className = "card-source";
-    source.textContent = story.source;
+    source.textContent = `${story.source} - Read story`;
 
     body.append(label, heading, excerpt, source);
     link.appendChild(body);
@@ -204,7 +204,7 @@ function renderVideos() {
 
     const source = document.createElement("p");
     source.className = "video-source";
-    source.textContent = video.source;
+    source.textContent = `${video.source} - Watch video`;
 
     body.append(heading, excerpt, source);
     link.append(media, body);
