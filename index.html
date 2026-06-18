@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta
       name="description"
-      content="A responsive Fox News-style editorial landing page with related stories and videos."
+      content="A responsive investigative-style landing page with related stories and videos."
     >
     <title>ICE Hotel Dispute News Landing Page</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -18,6 +18,7 @@
   </head>
   <body>
     <header class="site-header">
+      <div class="top-rule" aria-hidden="true"></div>
       <div class="container header-inner">
         <a
           class="brand"
@@ -26,10 +27,16 @@
           rel="noopener noreferrer"
           aria-label="News landing page home - opens in a new tab"
         >
-          <span class="brand-mark">FN</span>
-          <span class="brand-text">News Desk</span>
+          <span class="brand-mark">
+            <span>FOX</span>
+            <span>NEWS</span>
+          </span>
+          <span class="brand-text">
+            <span>Fox News Investigates:</span>
+            <strong>Minnesota Hotel ICE Dispute</strong>
+          </span>
         </a>
-        <nav class="top-nav" aria-label="Section navigation">
+        <nav class="top-nav" aria-label="Page navigation">
           <a
             href="#top-stories"
             target="_blank"
@@ -53,27 +60,57 @@
     <main class="container page-shell">
       <section class="hero" aria-labelledby="page-title">
         <p class="eyebrow">Politics &amp; Public Safety</p>
-        <h1 id="page-title">Minnesota hotel dispute draws federal scrutiny and protests</h1>
+        <h1 id="page-title">
+          Fox News Investigates: <span>Minnesota hotel ICE dispute</span>
+        </h1>
         <p class="dek">
-          Follow the latest developments from Fox News and Fox Business coverage,
-          including related reporting, live updates, and video analysis.
+          A continuing investigation into the Minnesota hotel controversy, the federal
+          response, protest arrests, and related video coverage.
         </p>
+        <p class="byline">Compiled from Fox News and Fox Business reporting</p>
+      </section>
+
+      <nav class="report-nav" aria-label="Report sections">
+        <a href="#top-stories" target="_blank" rel="noopener noreferrer">In this report</a>
+        <a href="#stats" target="_blank" rel="noopener noreferrer">At a glance</a>
+        <a href="#top-stories" target="_blank" rel="noopener noreferrer">The series</a>
+        <a href="#videos" target="_blank" rel="noopener noreferrer">Watch videos</a>
+      </nav>
+
+      <section class="stats-strip" id="stats" aria-label="Story highlights">
+        <div class="stat-card">
+          <strong>6</strong>
+          <span>reported story links</span>
+        </div>
+        <div class="stat-card">
+          <strong>4</strong>
+          <span>video segments</span>
+        </div>
+        <div class="stat-card">
+          <strong>12</strong>
+          <span>arrests reported</span>
+        </div>
+        <div class="stat-card">
+          <strong>300+</strong>
+          <span>protesters cited</span>
+        </div>
       </section>
 
       <div class="content-grid">
         <section class="main-column" id="top-stories" aria-labelledby="stories-heading">
-          <div class="section-heading">
-            <p class="kicker">Developing Story</p>
-            <h2 id="stories-heading">Latest stories</h2>
+          <div class="series-heading">
+            <span aria-hidden="true"></span>
+            <h2 id="stories-heading">The series</h2>
+            <span aria-hidden="true"></span>
           </div>
           <div class="story-list" id="story-list" aria-live="polite"></div>
         </section>
 
         <aside class="video-column" id="videos" aria-labelledby="videos-heading">
           <div class="rail-card">
-            <div class="section-heading rail-heading">
-              <p class="kicker">Watch</p>
-              <h2 id="videos-heading">Videos</h2>
+            <div class="rail-heading">
+              <p>Watch full series</p>
+              <h2 id="videos-heading">Featured video coverage</h2>
             </div>
             <div class="video-list" id="video-list" aria-live="polite"></div>
           </div>

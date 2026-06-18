@@ -129,7 +129,7 @@ function renderStories() {
 
   uniqueStories.forEach((story, index) => {
     const article = document.createElement("article");
-    article.className = index === 0 ? "story-card story-card-featured" : "story-card";
+    article.className = index < 2 ? "story-card story-card-lead" : "story-card";
 
     const link = createExternalLink({
       className: "story-link",
@@ -138,7 +138,14 @@ function renderStories() {
       url: story.url,
     });
 
-    link.appendChild(createThumbnail({ text: story.label }));
+    const media = document.createElement("div");
+    media.className = "story-media";
+    media.appendChild(createThumbnail({ text: `Part ${index + 1}` }));
+
+    const badge = document.createElement("span");
+    badge.className = "part-badge";
+    badge.textContent = `Part ${index + 1}`;
+    media.appendChild(badge);
 
     const body = document.createElement("div");
     body.className = "card-body";
@@ -160,7 +167,7 @@ function renderStories() {
     source.textContent = `${story.source} - Read story`;
 
     body.append(label, heading, excerpt, source);
-    link.appendChild(body);
+    link.append(media, body);
     article.appendChild(link);
     list.appendChild(article);
   });
@@ -170,7 +177,7 @@ function renderVideos() {
   const list = document.querySelector("#video-list");
   const uniqueVideos = uniqueByUrl(videos);
 
-  uniqueVideos.forEach((video) => {
+  uniqueVideos.forEach((video, index) => {
     const article = document.createElement("article");
     article.className = "video-card";
 
@@ -188,7 +195,7 @@ function renderVideos() {
     const play = document.createElement("span");
     play.className = "play-indicator";
     play.setAttribute("aria-hidden", "true");
-    play.textContent = "Play";
+    play.textContent = `${index + 1}`;
     media.appendChild(play);
 
     const body = document.createElement("div");
