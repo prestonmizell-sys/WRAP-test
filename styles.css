@@ -42,10 +42,45 @@ a:focus-visible {
   margin-inline: auto;
 }
 
+.sr-only {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  padding: 0;
+  overflow: hidden;
+  white-space: nowrap;
+  border: 0;
+  clip: rect(0, 0, 0, 0);
+}
+
 .top-rule {
-  height: 8px;
-  background: #171717;
-  border-bottom: 1px solid #ffffff;
+  color: #6b6258;
+  background: var(--paper);
+  border-top: 5px solid #171717;
+  border-bottom: 1px solid #cfc7bb;
+  font-size: 0.68rem;
+  font-weight: 900;
+  letter-spacing: 0.1em;
+  line-height: 1;
+  text-transform: uppercase;
+}
+
+.top-rule-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  min-height: 24px;
+}
+
+.top-rule-inner span:first-child {
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+.top-rule-inner span:last-child {
+  color: #8a8177;
 }
 
 .site-header {
@@ -56,55 +91,70 @@ a:focus-visible {
 
 .header-inner {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
-  min-height: 82px;
+  min-height: 116px;
+  padding-block: 20px 16px;
   gap: 22px;
 }
 
 .brand {
   display: inline-flex;
-  align-items: center;
-  gap: 14px;
+  align-items: flex-start;
+  gap: 22px;
   min-width: 0;
 }
 
 .brand-mark {
   display: grid;
-  width: 74px;
-  height: 58px;
+  width: 112px;
+  height: 92px;
   place-items: center;
-  padding: 8px 6px;
+  flex: 0 0 auto;
+  padding: 12px 8px;
   color: #ffffff;
   background:
     linear-gradient(135deg, #0b55a4 0 48%, #073a7a 48%),
     var(--blue);
-  border: 2px solid #ffffff;
-  box-shadow: 0 0 0 1px var(--blue);
-  font-size: 1.28rem;
+  border: 3px solid #ffffff;
+  box-shadow:
+    0 0 0 1px var(--blue),
+    0 2px 0 rgb(0 0 0 / 12%);
+  font-size: 2.05rem;
   font-weight: 900;
-  letter-spacing: -0.05em;
-  line-height: 0.82;
+  letter-spacing: -0.08em;
+  line-height: 0.78;
   text-align: center;
 }
 
 .brand-text {
   display: grid;
-  gap: 2px;
+  gap: 5px;
   min-width: 0;
+  padding-top: 23px;
 }
 
 .brand-text span {
-  color: var(--muted);
-  font-size: 0.82rem;
+  color: #8a8177;
+  font-size: 0.92rem;
   font-style: italic;
 }
 
 .brand-text strong {
   color: var(--blue-dark);
   font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.35rem, 3vw, 2.25rem);
+  font-size: clamp(1.7rem, 4.1vw, 3.25rem);
+  font-weight: 700;
   line-height: 1;
+}
+
+.brand-text strong::before {
+  color: var(--blue-dark);
+  content: "Fox News Investigates: ";
+}
+
+.brand-text strong {
+  color: var(--red);
 }
 
 .top-nav {
@@ -116,6 +166,7 @@ a:focus-visible {
   letter-spacing: 0.08em;
   text-transform: uppercase;
   white-space: nowrap;
+  padding-top: 6px;
 }
 
 .top-nav a:hover {
@@ -123,67 +174,59 @@ a:focus-visible {
 }
 
 .page-shell {
-  padding-block: 18px 42px;
+  padding-block: 0 42px;
 }
 
 .hero {
-  padding: 18px 22px 16px;
+  padding: 14px 22px 12px;
   background: var(--paper);
   border: 1px solid var(--line);
   border-bottom: 0;
-}
-
-.eyebrow {
-  margin: 0 0 6px;
-  color: var(--red);
-  font-size: 0.72rem;
-  font-weight: 900;
-  letter-spacing: 0.14em;
-  text-transform: uppercase;
-}
-
-.hero h1 {
-  margin: 0;
-  color: var(--blue-dark);
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: clamp(1.85rem, 5vw, 3.15rem);
-  line-height: 1.02;
-  letter-spacing: -0.045em;
-}
-
-.hero h1 span {
-  color: var(--red);
+  border-top: 0;
 }
 
 .dek {
-  max-width: 900px;
-  margin: 10px 0 0;
+  max-width: none;
+  margin: 0;
   color: #2d333b;
-  font-size: clamp(0.98rem, 1.8vw, 1.18rem);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: clamp(1.02rem, 2vw, 1.34rem);
+  line-height: 1.3;
+}
+
+.dropcap {
+  float: left;
+  margin: -6px 7px -6px 0;
+  color: var(--red);
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 3.2rem;
+  font-weight: 700;
+  line-height: 0.95;
 }
 
 .byline {
-  margin: 8px 0 0;
+  margin: 6px 0 0;
   color: var(--muted);
-  font-size: 0.86rem;
+  font-size: 0.8rem;
   font-style: italic;
+  text-align: right;
 }
 
 .report-nav {
   display: grid;
-  grid-template-columns: repeat(4, 1fr);
+  grid-template-columns: 1fr 1.35fr 1fr;
   background: #191919;
   border: 1px solid #191919;
 }
 
 .report-nav a {
   display: block;
-  padding: 11px 12px;
+  padding: 9px 12px;
   color: #ffffff;
   border-right: 1px solid rgb(255 255 255 / 20%);
-  font-size: 0.76rem;
+  font-size: 0.78rem;
   font-weight: 900;
-  letter-spacing: 0.07em;
+  letter-spacing: 0.08em;
   text-align: center;
   text-transform: uppercase;
 }
@@ -208,8 +251,8 @@ a:focus-visible {
 .stat-card {
   display: grid;
   justify-items: center;
-  min-height: 82px;
-  padding: 15px 10px 13px;
+  min-height: 72px;
+  padding: 12px 10px 11px;
   border-right: 1px solid var(--line);
   text-align: center;
 }
